@@ -11,7 +11,7 @@ import { Snackbar } from "@mui/material";
 
 //redux store, types ,css
 import "./CountryItem.css";
-import countryActions from "../../redux/slice/CountrySlice"
+import countryActions from "../../redux/slice/CountrySlice";
 import { CountryType } from "../../types/type";
 import { RootState,AppDispatch } from "../../redux/store";
 import { Link } from "react-router-dom";
@@ -28,9 +28,8 @@ export default function CountryItem({countries}:ListTypes)
   
   const dispatch=useDispatch<AppDispatch>();
   const favaoriteList=useSelector((state:RootState)=>state.country.favoriteList);
-  const isDuplicated=favaoriteList.some(
-  (faoritrItem)=>
-  faoritrItem.name.common.toLocaleLowerCase()===countries.name.common.toLocaleLowerCase());
+  const isDuplicated=favaoriteList.some((favoritrItem:any)=>
+  favoritrItem.name.common.toLocaleLowerCase()===countries.name.common.toLocaleLowerCase());
   
 //snackbar logic
 const [open, setOpen] = useState(false);

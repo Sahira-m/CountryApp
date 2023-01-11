@@ -1,11 +1,12 @@
 import React from "react";
 
 //Componenets
-import FavoriteList from "../component/Favorite-item/FavoriteList";
+import FavoriteList from "../../component/Favorite-List/FavoriteList";
+import "./Favorite.css"
 export default function FavoritePage() 
 {
 return(
-     <div>
+     <div className="favorite">
          <FavoriteList></FavoriteList> 
       </div> 
       );  

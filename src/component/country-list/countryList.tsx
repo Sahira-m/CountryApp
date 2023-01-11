@@ -16,7 +16,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import "./CountryList.css";
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
-import PageLaoad from "../../component/Page-Load/PageLoad";
+import PageLaoad from "../Page-Load/PageLoad";
 import countryActions from "../../redux/slice/CountrySlice";
 //component
 //types
@@ -30,12 +30,12 @@ export default function CountryList()
  const arrayDispatch=useDispatch();
  const isLoading = useSelector((state: RootState) => state.country.isLoad);
  const [sortButton, setSortButton]=useState<boolean>(false);
- useEffect(() => {
+/*  useEffect(() => {
     dispatch(fetchCountryUrl);
-  }, []);
+  }, []); */
  //new codes
 const countryList=useSelector((state:RootState)=>state.country.countryList);
-console.log("Country list is",countryList);
+//console.log("Country list is",countryList);
  useEffect(()=>
 {dispatch(fetchCountryUrl());},
 [dispatch]); 
@@ -47,9 +47,9 @@ const userInput = useSelector(
 else
 countryResult=countryList;
 
-    console.log("country res list is",countryResult);
-    console.log("country list is",countryList);
-    console.log("Uip",userInput);
+    //console.log("country res list is",countryResult);
+    //console.log("country list is",countryList);
+    //console.log("Uip",userInput);
     const sortedCountry = [...countryResult];
     function ascendingCountry()
      {   

@@ -6,12 +6,9 @@ import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 
-
 //redux srore,css, types
-//import "./countryItem.css";
-//import { RootState } from "../../redux/store";
 import { CountryType } from "../../types/type";
-
+import "./FavoriteItem.css";
 type ListTypes={
     countries:CountryType;    
 }
@@ -34,10 +31,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-//let favoriteArray:CountryType[];
+
 export default function FavoriteItem({countries}:ListTypes)
 {
-   // const favoriteList=useSelector((state:RootState)=>state.country.favoriteList);
+   
   return(<Fragment>
     <StyledTableRow key={crypto.randomUUID()} className ="CountryTable" >
   <StyledTableCell component="th" scope="row" width={30}>

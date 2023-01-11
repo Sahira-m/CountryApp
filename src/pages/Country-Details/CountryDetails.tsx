@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useEffect,useState } from "react";
+import { useEffect } from "react";
 
 //redux
-import {fetchCountryUrl}  from "../thunk/CountryDetail";
+import { fetchCountryUrl } from "../../thunk/CountryDetails";
 import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { AppDispatch } from "../redux/store";
+import { RootState } from "../../redux/store";
+import { AppDispatch } from "../../redux/store";
 
 //mui
 import CardHeader from '@mui/material/CardHeader';
@@ -17,6 +17,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Card from "@mui/material/Card";
 
+import "./CountryDetails.css"
 export default function CountryDetails()
  {
 const name = useParams();
@@ -28,7 +29,7 @@ const dispatch = useDispatch<AppDispatch>();
   dispatch(fetchCountryUrl(Apiurl));
 }, [dispatch,Apiurl]);
 return( <div className="cards">
-<Card sx={{ maxWidth: 400 }}>
+<Card sx={{ maxWidth: 400 }} className="card">
   <CardHeader
     avatar={
       <Avatar
@@ -53,14 +54,17 @@ return( <div className="cards">
     <Typography variant="body2" color="text.secondary">
       Languages:
     </Typography>
-    <ul className="languages">
-      {countryDetails[0]?.languages
-        ? Object.values(countryDetails[0]?.languages).map((language) => (
-            <li key={crypto.randomUUID()}>{language}</li>
-          ))
-        : null}
+    <ul>
+       {countryDetails[0]?.languages ? (
+        Object.entries(countryDetails[0]?.languages).map(([key]) => (
       
-    </ul>
+            <p key={key}> <span>{countryDetails[0]?.languages[key]}</span></p>
+           
+         ))
+       ) : (
+         <li>No Languages</li>
+       )}
+     </ul>
   </CardContent>
 </Card>
 </div>

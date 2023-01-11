@@ -1,12 +1,7 @@
 .table
 {
-   
-  
+
     color: rgb(214, 74, 74);
-    
-font-family: 'Nunito' sans-serif;
-    /* column-width: auto; */
-    /*padding-left: 200px;*/
 }
  .table thead
 {
@@ -23,5 +18,5 @@ font-family: 'Nunito' sans-serif;
 .table colgroup
 {
      column-span:style="width: 20%" ; 
-    /* column-width: 10px; */
+    
 }

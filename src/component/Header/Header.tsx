@@ -20,13 +20,14 @@ import HouseIcon from '@mui/icons-material/House';
 //Redux store
 import { RootState } from '../../redux/store';
 
+
 export default function Header()
  {
     const favaoriteList=useSelector((state:RootState)=>state.country.favoriteList);
     const style = { textDecoration: 'none' };
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    React.useState<null | HTMLElement>(null);
+
+   //const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =useState<null | HTMLElement>(null);
     const [auth, setAuth] = useState(true);
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(event.currentTarget);
@@ -56,10 +57,10 @@ export default function Header()
                     Country
                    </Typography> 
                      <Box sx={{ flexGrow: 100,position:'relative' ,marginLeft:140 }} >  
-                 <Link style={style}  to="/" >
+                 <Link style={style}   to="/" >
                  <HouseIcon sx={{ color: "white" }}/> 
                  </Link>
-                 
+              
                     </Box>
                  <FormControlLabel
           control={
@@ -67,10 +68,9 @@ export default function Header()
               checked={auth}
               onChange={handleChange}
               aria-label="login switch"
-              sx={{ color: auth ? "red" :"inherit"  }}
             />
           }
-          label={auth ? 'Logout' : 'Login'}
+          label={auth ? 'Login' : 'Logout'}
         /> 
                  {auth && (
           
@@ -81,16 +81,20 @@ export default function Header()
                 aria-haspopup="true"
                 onClick={handleMenu}
                  color="inherit" 
-               
               >
-                <AccountCircle />
+                <AccountCircle sx={{ color: auth ? "green" :"red"  }} />
+
+
+           
+
+
               </IconButton> 
              
           )}
                  <Box  sx={{ flexGrow: 20}} >
                         <Link style={style}  to="/favorite"> 
                         <Badge badgeContent={favaoriteList.length} color="error">
-                        <FavoriteIcon sx={{ color: "white" }} />  </Badge>
+                        <FavoriteIcon sx={{ color: favaoriteList.length>0 ?"pink[200]" : "white" }} />  </Badge>
                        </Link>   
                    </Box>
                </Toolbar>

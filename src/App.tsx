@@ -3,12 +3,12 @@ import {Routes,Route} from "react-router-dom";
 
 
 //pages 
-import Favorite from "./pages/Favorite";
-import {Home} from "./pages/Home";
+import Favorite from "./pages/Favorite/Favorite";
+import {Home} from "./pages/Home/Home";
 //css redux store and thunk
 import "./App.css";
 
-import CountryDetails from "./pages/CountryDetails";
+import CountryDetails from "./pages/Country-Details/CountryDetails";
 import Header from "./component/Header/Header";
 import Footer from "./component/Footer/Footer";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
