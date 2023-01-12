@@ -11,7 +11,7 @@ import {Snackbar,Alert} from "@mui/material";
 
 //redux srore,css, types
 import { CountryType } from "../../types/type";
-import countryActions from "../../redux/slice/CountrySlice";
+import countryActions from "../../redux/slice/countrySlice";
 import "./FavoriteItem.css";
 import { fabClasses } from "@mui/material";
 type ListTypes={

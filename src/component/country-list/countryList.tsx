@@ -17,7 +17,7 @@ import "./CountryList.css";
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
 import PageLaoad from "../Page-Load/PageLoad";
-import countryActions from "../../redux/slice/CountrySlice";
+import countryActions from "../../redux/slice/countrySlice";
 //component
 //types
 import { CountryType } from "../../types/type";

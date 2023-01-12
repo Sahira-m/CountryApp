@@ -11,7 +11,7 @@ import { Snackbar } from "@mui/material";
 
 //redux store, types ,css
 import "./CountryItem.css";
-import countryActions from "../../redux/slice/CountrySlice";
+import countryActions from "../../redux/slice/countrySlice";
 import { CountryType } from "../../types/type";
 import { RootState,AppDispatch } from "../../redux/store";
 import { Link } from "react-router-dom";
