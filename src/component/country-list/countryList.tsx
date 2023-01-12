@@ -30,12 +30,8 @@ export default function CountryList()
  const arrayDispatch=useDispatch();
  const isLoading = useSelector((state: RootState) => state.country.isLoad);
  const [sortButton, setSortButton]=useState<boolean>(false);
-/*  useEffect(() => {
-    dispatch(fetchCountryUrl);
-  }, []); */
- //new codes
+
 const countryList=useSelector((state:RootState)=>state.country.countryList);
-//console.log("Country list is",countryList);
  useEffect(()=>
 {dispatch(fetchCountryUrl());},
 [dispatch]); 

@@ -8,8 +8,6 @@ export  function fetchCountryUrl(url:string)
    {
     const response =await fetch(url);
     const countryDetails=await response.json();
-    
-    console.log("country detail is inside thunk",countryDetails);
     dispatch(countryDetailsAction.countryDetails(countryDetails)); 
 
    }

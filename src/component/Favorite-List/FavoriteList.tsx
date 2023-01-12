@@ -4,7 +4,7 @@ import { useSelector,useDispatch } from "react-redux";
 //redux store ,component,thunk file
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
-import FavoriteItem from "../Favorite-Item/FavoriteItem";
+import FavoriteItem from "../favorite-Item/favoriteItem";
 import PageLaoad from "../Page-Load/PageLoad";
 
 

@@ -15,8 +15,7 @@ reducers:{
     userInputMethod:(state,action)=>
     {
         state.userInput=action.payload
-    },
-    
+    }, 
 }
 }
 );

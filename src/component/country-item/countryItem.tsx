@@ -22,10 +22,8 @@ type ListTypes={
 
 export default function CountryItem({countries}:ListTypes)
 {
-
   // search part
 
-  
   const dispatch=useDispatch<AppDispatch>();
   const favaoriteList=useSelector((state:RootState)=>state.country.favoriteList);
   const isDuplicated=favaoriteList.some((favoritrItem:any)=>
@@ -83,7 +81,7 @@ handleClick();
        )}
      </ul>
        </TableCell>
-       <TableCell> <IconButton aria-label="add to favorites" onClick={addFavorite}>
+       <TableCell align="right"> <IconButton aria-label="add to favorites" onClick={addFavorite}>
        <FavoriteIcon  sx={{ color: isDuplicated ? pink[500] : blueGrey }}>
        </FavoriteIcon> 
           </IconButton>
@@ -91,19 +89,18 @@ handleClick();
 !alertMessage ? 
 (    
         <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-        
         <Alert severity="warning">The favorite item exist already</Alert>
-      </Snackbar>
+        </Snackbar>
       
       ):
       
- <Snackbar  open={openFail} autoHideDuration={1000} onClose={handleClose}>
+        <Snackbar  open={openFail} autoHideDuration={1000} onClose={handleClose}>
         <Alert severity="success">Item Added Succesfully</Alert>
-    </Snackbar>
+        </Snackbar>
     
 } 
         </TableCell>
-       <TableCell>
+       <TableCell align="right">
            <Link to={`/countries/${countries.name.common}`}  > 
             MoreDetails
           </Link>{" "}  </TableCell>

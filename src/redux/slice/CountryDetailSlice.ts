@@ -14,7 +14,6 @@ const countryDetailsSlice = createSlice({
   reducers: {
     countryDetails: (state, action) => {
       state.countryItem = action.payload;
-      //console.log(action.payload,"payload");
     },
   },
 });

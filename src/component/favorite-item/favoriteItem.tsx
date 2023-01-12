@@ -13,7 +13,8 @@ import {Snackbar,Alert} from "@mui/material";
 import { CountryType } from "../../types/type";
 import countryActions from "../../redux/slice/countrySlice";
 import "./FavoriteItem.css";
-import { fabClasses } from "@mui/material";
+import { Button } from "@mui/material";
+
 type ListTypes={
     countries:CountryType;    
 }
@@ -32,35 +33,37 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
    backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
+
   '&:last-child td, &:last-child th': {
     border: 0,
   },
 }));
-const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-  if (reason === 'clickaway') {
-    return;
-  } 
-}
+
 
 
 export default function FavoriteItem({countries}:ListTypes)
 {
   // snacbar
-const [open, setOpen] = useState(false);
+const [openRemove, setOpenRemove] = useState(false);
   const deleteDispatch=useDispatch();
   const handleClick = () => {
-    setOpen(true);
-  };
+    setOpenRemove(true);
 
-  function removeFromFavorite(name:string)
+  };
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    } 
+    setOpenRemove(false);
+  }
+  function removeFromFavorite(name:string): void
   {
   handleClick();
-  alert(open);
+  setOpenRemove(true);
    deleteDispatch(countryActions.removeFromFavorite(name));
    
   }
-
+ 
   return(<Fragment>
     <StyledTableRow key={crypto.randomUUID()} className ="CountryTable" >
   <StyledTableCell component="th" scope="row" width={30}>
@@ -81,9 +84,11 @@ const [open, setOpen] = useState(false);
      </ul> 
        </StyledTableCell> 
        
-      <StyledTableCell> <button onClick={()=>removeFromFavorite(countries.name.common)}> DELETE</button>
-      <Snackbar  open={open} autoHideDuration={1000} onClose={handleClose}>
-        <Alert severity="success">Item Removed Succesfully</Alert>
+      <StyledTableCell>
+      <Button variant="text" onClick={()=>removeFromFavorite(countries.name.common)} sx={{color:"black"}}>DELETE</Button>
+         
+      <Snackbar  open={openRemove} autoHideDuration={1000} onClose={handleClose}>
+        <Alert severity="success">{countries.name.common} Removed Succesfully</Alert>
     </Snackbar>
       
       </StyledTableCell>
