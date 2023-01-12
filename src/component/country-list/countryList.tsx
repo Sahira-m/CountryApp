@@ -1,7 +1,7 @@
 import  React, { useEffect,useState }  from "react";
 import { useSelector,useDispatch } from "react-redux";
 //mui
-import CountryItem from "../country-item/CountryItem";
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,11 +13,12 @@ import {Tooltip ,IconButton} from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
-import "./CountryList.css";
+import CountryItem from "../country-item/CountryItem";
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
 import PageLaoad from "../Page-Load/PageLoad";
 import countryActions from "../../redux/slice/countrySlice";
+import "./CountryList.css";
 //component
 //types
 import { CountryType } from "../../types/type";
