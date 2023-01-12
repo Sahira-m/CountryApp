@@ -13,7 +13,7 @@ import {Tooltip ,IconButton} from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
-import CountryItem from "../country-item/CountryItem";
+import CountryItem from "../country-item/countryItem";
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
 import PageLaoad from "../Page-Load/PageLoad";

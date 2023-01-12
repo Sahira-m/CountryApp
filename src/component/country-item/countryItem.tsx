@@ -10,7 +10,7 @@ import Alert from '@mui/material/Alert';
 import { Snackbar } from "@mui/material";
 
 //redux store, types ,css
-import "./CountryItem.css";
+import "./countryItem.css";
 import countryActions from "../../redux/slice/countrySlice";
 import { CountryType } from "../../types/type";
 import { RootState,AppDispatch } from "../../redux/store";
