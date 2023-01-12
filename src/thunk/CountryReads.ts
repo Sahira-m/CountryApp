@@ -1,4 +1,4 @@
-import countryActions from "../redux/slice/CountrySlice";
+import countryActions from "../redux/slice/countrySlice";
 import { AppDispatch } from "../redux/store";
 
 const url=`https://restcountries.com/v3.1/all`;
