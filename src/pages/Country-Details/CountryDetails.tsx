@@ -29,8 +29,8 @@ const dispatch = useDispatch<AppDispatch>();
   dispatch(fetchCountryUrl(Apiurl));
 }, [dispatch,Apiurl]);
 return( <div className="cards">
-  < h2> Country Details is</h2>
-<Card sx={{ maxWidth: 400 }} className="card">
+  
+<Card sx={{ maxWidth: 500 }} className="card">
   <CardHeader
     avatar={
       <Avatar

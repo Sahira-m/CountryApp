@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { STATUS_CODES } from "http";
-import FavoriteList from "../../component/Favorite-List/FavoriteList";
 
 import {CountryType } from "../../types/type";
 
