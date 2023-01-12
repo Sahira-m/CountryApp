@@ -16,7 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import FavoriteIcon from  "@mui/icons-material/Favorite";
 import HouseIcon from '@mui/icons-material/House';
-
+import {  pink } from "@mui/material/colors";
 //Redux store
 import { RootState } from '../../redux/store';
 
@@ -88,7 +88,7 @@ export default function Header()
                  <Box  sx={{ flexGrow: 20}} >
                         <Link style={style}  to="/favorite"> 
                         <Badge badgeContent={favaoriteList.length} color="error">
-                        <FavoriteIcon sx={{ color: favaoriteList.length>0 ? "pink[500]" : "white" }} />
+                        <FavoriteIcon sx={{ color: favaoriteList.length>0 ? pink[500] : "white" }} />
                           </Badge>
                        </Link>   
                    </Box>

@@ -13,22 +13,20 @@ import {Tooltip ,IconButton} from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
+//component and types
 import CountryItem from "../country-item/countryItem";
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
 import PageLaoad from "../Page-Load/PageLoad";
 import countryActions from "../../redux/slice/countrySlice";
-import "./CountryList.css";
-//component
-//types
 import { CountryType } from "../../types/type";
-
+import "./CountryList.css";
 
 export default function CountryList()
 {
- //new code 
+  
  const dispatch = useDispatch<AppDispatch>();
- const arrayDispatch=useDispatch();
+ //const arrayDispatch=useDispatch();
  const isLoading = useSelector((state: RootState) => state.country.isLoad);
  const [sortButton, setSortButton]=useState<boolean>(false);
 
@@ -58,7 +56,7 @@ countryResult= countryResult.slice(0,20);
         }
         return 0;
       });
-       arrayDispatch(countryActions.countryLists(sorted)); 
+       dispatch(countryActions.countryLists(sorted)); 
      }
      function descendingCountry()
      {   
@@ -73,7 +71,7 @@ countryResult= countryResult.slice(0,20);
         }
         return 0;
       });
-       arrayDispatch(countryActions.countryLists(sorted)); 
+       dispatch(countryActions.countryLists(sorted)); 
      }
 
     return(
@@ -107,12 +105,10 @@ countryResult= countryResult.slice(0,20);
            
   {
     sortedCountry.map((countries)=>
-    
     <TableRow  key={crypto.randomUUID()}
     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
   <CountryItem countries={countries}  key={crypto.randomUUID()} ></CountryItem>
   </TableRow>
-    
       )
   }
       </TableBody>
