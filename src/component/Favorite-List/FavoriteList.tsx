@@ -7,6 +7,7 @@ import { fetchCountryUrl } from "../../thunk/CountryReads";
 import FavoriteItem from "../Favorite-Item/FavoriteItem";
 import PageLaoad from "../Page-Load/PageLoad";
 
+
 //Mui
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -27,6 +28,7 @@ export default function FavoriteList()
     useEffect(()=>
     {dispatch(fetchCountryUrl());},
     [dispatch]);
+   
     return(
       <div> 
         {isLoading?<PageLaoad></PageLaoad>:""}
@@ -39,7 +41,7 @@ export default function FavoriteList()
               <TableCell align="right">Region</TableCell>
               <TableCell align="right">Population</TableCell>
               <TableCell align="right">Languages</TableCell>
-              
+              <TableCell align="right"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

@@ -82,12 +82,6 @@ countryResult=countryList;
        arrayDispatch(countryActions.countryLists(sorted)); 
      }
 
-/* 
-     function SubmitHandler(Event :any ) 
-     {
-Event.preventDefault();
-onSubmit={SubmitHandler}
-     } */
     return(
       <div>
       {isLoading ? <PageLaoad></PageLaoad> : ""}

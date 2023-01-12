@@ -1,17 +1,23 @@
 
-import React ,{Fragment} from "react";
-
+import React ,{Fragment, useEffect} from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 //Mui
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
+import {Snackbar,Alert} from "@mui/material";
+
 
 //redux srore,css, types
 import { CountryType } from "../../types/type";
+import countryActions from "../../redux/slice/CountrySlice";
 import "./FavoriteItem.css";
+import { fabClasses } from "@mui/material";
 type ListTypes={
     countries:CountryType;    
 }
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
    backgroundColor: theme.palette.common.black,
@@ -31,10 +37,30 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
+const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  if (reason === 'clickaway') {
+    return;
+  } 
+}
+
 
 export default function FavoriteItem({countries}:ListTypes)
 {
+  // snacbar
+const [open, setOpen] = useState(false);
+  const deleteDispatch=useDispatch();
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  function removeFromFavorite(name:string)
+  {
+  handleClick();
+  alert(open);
+   deleteDispatch(countryActions.removeFromFavorite(name));
    
+  }
+
   return(<Fragment>
     <StyledTableRow key={crypto.randomUUID()} className ="CountryTable" >
   <StyledTableCell component="th" scope="row" width={30}>
@@ -54,8 +80,18 @@ export default function FavoriteItem({countries}:ListTypes)
        )}
      </ul> 
        </StyledTableCell> 
+       
+      <StyledTableCell> <button onClick={()=>removeFromFavorite(countries.name.common)}> DELETE</button>
+      <Snackbar  open={open} autoHideDuration={1000} onClose={handleClose}>
+        <Alert severity="success">Item Removed Succesfully</Alert>
+    </Snackbar>
+      
+      </StyledTableCell>
       
 </StyledTableRow>
+
+
+ 
 </Fragment>);
 }
 

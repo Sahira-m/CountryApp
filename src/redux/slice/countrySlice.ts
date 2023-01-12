@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { STATUS_CODES } from "http";
+import FavoriteList from "../../component/Favorite-List/FavoriteList";
 
 import {CountryType } from "../../types/type";
 
@@ -26,13 +28,24 @@ reducers:{
     favoriteLists:(state,action:PayloadAction<CountryType>)=>
     {
       state.favoriteList.push(action.payload);
-      //console.log("favorite actionpayload list is",action.payload);
       state.isLoad=false;
     },
     isLoadSets:(state)=>
     {
       state.isLoad=true;
-    }
+    },
+
+    removeFromFavorite: (state, action) => {
+      let index = 0;
+      for (let i = 0; i < state.favoriteList.length; i++) 
+      {
+        if (state.favoriteList[i].name.common === action.payload) {
+          index = i;
+          break;
+        }
+      }
+      state.favoriteList.splice(index, 1);
+    },
 
 }
 }
