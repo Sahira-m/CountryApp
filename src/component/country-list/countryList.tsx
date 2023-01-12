@@ -46,10 +46,7 @@ const userInput = useSelector(
   countryResult=countryList.filter((country:CountryType)=> country.name.common.toLocaleLowerCase().includes(userInput.toLowerCase()) );
 else
 countryResult=countryList;
-
-    //console.log("country res list is",countryResult);
-    //console.log("country list is",countryList);
-    //console.log("Uip",userInput);
+countryResult= countryResult.slice(0,20);
     const sortedCountry = [...countryResult];
     function ascendingCountry()
      {   

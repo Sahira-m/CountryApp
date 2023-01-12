@@ -27,7 +27,6 @@ export default function Header()
     const style = { textDecoration: 'none' };
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-   //const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =useState<null | HTMLElement>(null);
     const [auth, setAuth] = useState(true);
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(event.currentTarget);
@@ -83,18 +82,14 @@ export default function Header()
                  color="inherit" 
               >
                 <AccountCircle sx={{ color: auth ? "green" :"red"  }} />
-
-
-           
-
-
               </IconButton> 
              
           )}
                  <Box  sx={{ flexGrow: 20}} >
                         <Link style={style}  to="/favorite"> 
                         <Badge badgeContent={favaoriteList.length} color="error">
-                        <FavoriteIcon sx={{ color: favaoriteList.length>0 ?"pink[200]" : "white" }} />  </Badge>
+                        <FavoriteIcon sx={{ color: favaoriteList.length>0 ? "pink[500]" : "white" }} />
+                          </Badge>
                        </Link>   
                    </Box>
                </Toolbar>

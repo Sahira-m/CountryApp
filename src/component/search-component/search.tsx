@@ -1,15 +1,15 @@
 import React from "react";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useDispatch } from "react-redux";
 //mui
 import TextField from '@mui/material/TextField';
-import { InputBase } from "@mui/material";
 import "./Search.css"
 //slice
 import  InputActions from "../../redux/slice/UserInputSlice"
 
 export default function Search()
 {
+
     const [userInput, setUserInput]=useState<string>("");
     const dispatch=useDispatch();
     function getConutryName(event: React.ChangeEvent<HTMLInputElement>)
@@ -21,14 +21,15 @@ export default function Search()
      
     } 
 
-     function keyPress()
+     function keyPress(e:any)
     {
-       //if (e.keycode === 13)
-    // {
+        
+       if (e.keycode === 13)
+     {
          setUserInput(""); 
-     
+     alert("hai");
           dispatch(InputActions.userInputMethod(userInput));
-     //}
+     }
     }
     
     return<div className="Text-Field">
@@ -37,13 +38,11 @@ export default function Search()
  id="standard-basic"
   label="Standard"
    variant="standard"
-  type="search" 
+  //type="search"
   onChange={getConutryName}
-  //onkeyPress ={()=>keyPress}
-  //onKeyDown={keyPress}
-  
+  onKeyPress={()=>keyPress}
   />
-    <InputBase  ></InputBase>
-    </div>
+   </div>
+   
     ;
 }
