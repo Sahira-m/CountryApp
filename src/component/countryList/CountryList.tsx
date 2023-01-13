@@ -14,7 +14,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 //component and types
-import CountryItem from "../countryItem/countryItem";
+import CountryItem from "../countryItem/CountryItem";
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
 import PageLaoad from "../pageLoad/PageLoad";

@@ -60,6 +60,7 @@ const [openRemove, setOpenRemove] = useState(false);
   {
   handleClick();
   setOpenRemove(true);
+  console.log("value open",openRemove);
    deleteDispatch(countryActions.removeFromFavorite(name));
    
   }
