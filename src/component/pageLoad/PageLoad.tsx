@@ -19,11 +19,11 @@ function LinearProgressWithLabel(props: LinearProgressProps & { value: number })
   );
 }
 export default function PageLaoad() {
-  const [progress, setProgress] = useState(10);
+  const [progress, setProgress] = useState(50);
  useEffect(() => {
     const timer = setInterval(() => {
       
-      setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
+      setProgress((prevProgress) => (prevProgress >= 50 ? 100 : prevProgress + 10));
     }, 800);
      return () => {
        clearInterval(timer);

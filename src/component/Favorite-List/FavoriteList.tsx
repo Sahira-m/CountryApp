@@ -4,8 +4,8 @@ import { useSelector,useDispatch } from "react-redux";
 //redux store ,component,thunk file
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
-import FavoriteItem from "../favorite-Item/favoriteItem";
-import PageLaoad from "../Page-Load/PageLoad";
+import FavoriteItem from "../favoriteItem/FavoriteItem";
+import PageLaoad from "../pageLoad/PageLoad";
 
 
 //Mui

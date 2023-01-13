@@ -6,6 +6,7 @@ type stateType={
     countryList:CountryType[];
     favoriteList:CountryType[];
     isLoad:boolean;
+    
 };
 const initialState:stateType={
    countryList:[],
@@ -20,13 +21,14 @@ initialState,
 reducers:{
     countryLists:(state,action)=>
     {
-        state.countryList=action.payload;
+      state.countryList=action.payload;
       state.isLoad=false;
     },
     favoriteLists:(state,action:PayloadAction<CountryType>)=>
     {
       state.favoriteList.push(action.payload);
       state.isLoad=false;
+      
     },
     isLoadSets:(state)=>
     {
@@ -44,6 +46,7 @@ reducers:{
       }
       state.favoriteList.splice(index, 1);
     },
+    
 
 }
 }

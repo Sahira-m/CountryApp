@@ -11,7 +11,7 @@ import { Snackbar } from "@mui/material";
 
 //redux store, types ,css
 import "./countryItem.css";
-import countryActions from "../../redux/slice/countrySlice";
+import countryActions from "../../redux/slice/CountrySlice";
 import { CountryType } from "../../types/type";
 import { RootState,AppDispatch } from "../../redux/store";
 import { Link } from "react-router-dom";
@@ -87,12 +87,12 @@ handleClick();
           </IconButton>
           {
 !alertMessage ? 
-(    
+        (    
         <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
         <Alert severity="warning">The favorite item exist already</Alert>
         </Snackbar>
       
-      ):
+        ):
       
         <Snackbar  open={openFail} autoHideDuration={1000} onClose={handleClose}>
         <Alert severity="success">Item Added Succesfully</Alert>

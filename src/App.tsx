@@ -3,14 +3,14 @@ import {Routes,Route} from "react-router-dom";
 
 
 //pages 
-import Favorite from "./pages/Favorite/Favorite";
-import {Home} from "./pages/Home/Home";
+import Favorite from "./pages/favorite/Favorite";
+import {Home} from "./pages/home/Home";
 //css redux store and thunk
 import "./App.css";
 
-import CountryDetails from "./pages/Country-Details/CountryDetails";
-import Header from "./component/Header/Header";
-import Footer from "./component/Footer/Footer";
+import CountryDetails from "./pages/countryDetails/CountryDetails";
+import Header from "./component/header/Header";
+import Footer from "./component/footer/Footer";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 function App()
  {

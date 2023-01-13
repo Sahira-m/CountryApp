@@ -1,7 +1,7 @@
 import  React, { useEffect,useState }  from "react";
 import { useSelector,useDispatch } from "react-redux";
-//mui
 
+//mui
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -14,11 +14,11 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 //component and types
-import CountryItem from "../country-item/countryItem";
+import CountryItem from "../countryItem/countryItem";
 import { RootState,AppDispatch } from "../../redux/store";
 import { fetchCountryUrl } from "../../thunk/CountryReads";
-import PageLaoad from "../Page-Load/PageLoad";
-import countryActions from "../../redux/slice/countrySlice";
+import PageLaoad from "../pageLoad/PageLoad";
+import countryActions from "../../redux/slice/CountrySlice";
 import { CountryType } from "../../types/type";
 import "./CountryList.css";
 
@@ -26,7 +26,6 @@ export default function CountryList()
 {
   
  const dispatch = useDispatch<AppDispatch>();
- //const arrayDispatch=useDispatch();
  const isLoading = useSelector((state: RootState) => state.country.isLoad);
  const [sortButton, setSortButton]=useState<boolean>(false);
 
@@ -41,6 +40,7 @@ const userInput = useSelector(
   countryResult=countryList.filter((country:CountryType)=> country.name.common.toLocaleLowerCase().includes(userInput.toLowerCase()) );
 else
 countryResult=countryList;
+
 countryResult= countryResult.slice(0,20);
     const sortedCountry = [...countryResult];
     function ascendingCountry()
@@ -82,7 +82,8 @@ countryResult= countryResult.slice(0,20);
           <TableHead>
             <TableRow>
               <TableCell>Flag</TableCell>
-              <TableCell align="right">Name <Tooltip title="SortByNames">
+              <TableCell align="right">Name 
+              <Tooltip title="SortByNames">
                   {sortButton? (
                     <IconButton onClick={descendingCountry}>
                       <ArrowDownwardIcon fontSize="small" />

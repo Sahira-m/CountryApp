@@ -23,11 +23,9 @@ export default function Search()
 
      function keyPress(e:any)
     {
-        
        if (e.keycode === 13)
      {
          setUserInput(""); 
-     alert("hai");
           dispatch(InputActions.userInputMethod(userInput));
      }
     }
@@ -38,9 +36,9 @@ export default function Search()
  id="standard-basic"
   label="Standard"
    variant="standard"
-  //type="search"
+  type="search"
   onChange={getConutryName}
-  onKeyPress={()=>keyPress}
+  onClick={()=>keyPress}
   />
    </div>
    

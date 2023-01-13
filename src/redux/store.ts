@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 
-import {countryReducer} from "./slice/countrySlice";
+import {countryReducer} from "./slice/CountrySlice";
 import {countrydetailsReducer} from "./slice/CountryDetailSlice"
 import {InputReducer} from "./slice/UserInputSlice";
 const store=configureStore({
