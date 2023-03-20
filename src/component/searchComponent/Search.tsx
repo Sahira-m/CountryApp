@@ -39,6 +39,7 @@ export default function Search()
   type="search"
   onChange={getConutryName}
   onClick={()=>keyPress}
+  
   />
    </div>
    
